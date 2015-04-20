@@ -4,6 +4,7 @@ class CreateSongs < ActiveRecord::Migration
       t.string :title
       t.string :author
       t.string :url
+      t.integer :vote
       t.timestamps null: false
     end
   end

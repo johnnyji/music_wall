@@ -4,6 +4,12 @@ header {
   width: 100vw;
   height: 60px;
   background-color: #E87E04;
+  background: -webkit-linear-gradient(#E87E04, #F9690E);
+  background: -moz-linear-gradient(#E87E04, #F9690E);
+  background: -ms-linear-gradient(#E87E04, #F9690E);
+  background: -o-linear-gradient(#E87E04, #F9690E);
+  background: linear-gradient(#E87E04, #F9690E);
+  z-index: 2;
 }
 
 .title {
@@ -13,6 +19,11 @@ header {
   top: 50%;
   font-weight: bolder;
   font-size: 1.3em;
+  color: #FFF;
+}
+
+.title a:hover {
+  color: #202020;
 }
 
 a.share-song-link {
@@ -21,8 +32,9 @@ a.share-song-link {
   top: 50%;
   right: 0;
   color: #FFF;
+  font-size: 1.2em;
 }
 
 a.share-song-link:hover {
-  color: #FDE3A7;
+  color: #202020;
 }

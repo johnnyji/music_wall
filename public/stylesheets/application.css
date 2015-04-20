@@ -1,6 +1,7 @@
 html, body {
   box-sizing: border-box;
   font-family: 'PT Sans', sans-serif;
+  background-image: url("../images/background.jpg");
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -17,9 +18,25 @@ a:hover, a:active {
 }
 
 .main-container {
-  margin: 120px auto 0 auto;
-  padding: 1em 1em 3em 1em;
-  width: 400px;
-  background-color: #EB9532;
+  margin: 120px auto 80px auto;
+  padding: 1em;
+  width: 370px;
+  background: -webkit-linear-gradient(#E87E04, #F9690E);
+  background: -moz-linear-gradient(#E87E04, #F9690E);
+  background: -ms-linear-gradient(#E87E04, #F9690E);
+  background: -o-linear-gradient(#E87E04, #F9690E);
+  background: linear-gradient(#E87E04, #F9690E);
   text-align: center;
+}
+
+@media (min-width: 700px) {
+  html, body {
+    font-size: 1.2em;
+  }
+  .main-container {
+    width: 600px;
+  }
+  .votes {
+    text-align: center;
+  }
 }

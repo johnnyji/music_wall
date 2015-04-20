@@ -1,6 +1,11 @@
 <form action="/songs/create" method="post" class="share-song-form">
+
+  <%= @song.errors[:author].last %>
   <input type="text" name="author" placeholder="Artist Name" required><br>
+  <%= @song.errors[:title].last %>
   <input type="text" name="title" placeholder="Song Title" required><br>
+  <%= @song.errors[:url].last %>
   <input type="text" name="url" placeholder="Song URL" required><br>
-  <input type="submit" value="Stick">
+  <input type="submit" value="Stick!">
+
 </form>

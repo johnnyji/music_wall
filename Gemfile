@@ -2,7 +2,7 @@
 source "https://rubygems.org"
 
 gem 'rake'
-gem 'activesupport'
+gem "activesupport"
 
 gem 'sinatra'
 gem 'sinatra-contrib'

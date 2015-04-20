@@ -1,9 +1,39 @@
 .song-container {
   background-color: #FDE3A7;
-  padding: 1em;
+  padding: 0 1em;
   margin-bottom: 1em;
+  text-align: left;
 }
 
+.song-info  {
+  display: inline-block;
+  width: auto;
+  width: 90%
+}
+
+.votes { 
+  display: inline-block; 
+  vertical-align: middle;
+  text-align: center;
+  right: 0;
+  width: 8%;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.votes i {
+  font-size: 2em;
+  text-align: center;
+}
+
+.vote-count {
+  margin: 0 auto;
+  margin-right: -12px;
+}
+
+.song-container a {
+  margin-left: 0.5em;
+}
 .song-container a:hover {
   color: #E87E04;
 }
