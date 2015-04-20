@@ -1,0 +1,28 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  background-color: #E87E04;
+}
+
+.title {
+  position: absolute;
+  padding-left: 50px; 
+  transform: translateY(-50%);
+  top: 50%;
+  font-weight: bolder;
+  font-size: 1.3em;
+}
+
+a.share-song-link {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  right: 0;
+  color: #FFF;
+}
+
+a.share-song-link:hover {
+  color: #FDE3A7;
+}

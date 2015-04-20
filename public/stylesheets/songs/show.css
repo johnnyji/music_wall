@@ -1,0 +1,9 @@
+.song-container {
+  background-color: #FDE3A7;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.song-container a:hover {
+  color: #E87E04;
+}
