@@ -1,0 +1,19 @@
+.intro-container {
+  width: 95%;
+  text-align: c;
+}
+
+.intro-title {
+  color: #FFF;
+  margin-bottom: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.intro-subtitle {
+  color: #FFF;
+  margin: 0.5em 0 1.5em 0;
+}
+
+a.login-redirect {
+  font-size: 0.8em;
+}

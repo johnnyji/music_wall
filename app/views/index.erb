@@ -1,11 +1,13 @@
-<h1>Music Wall</h1>
-<h3>Stick your songs</h3>
-<div class="user-options">
-  <form action="/users/create" method="post">
-    <input type="text" name="name" placeholder="Your name" required><br>
-    <input type="password" name="password" placeholder="Pick a password" required><br>
-    <input type="submit" value="Sign up!">
-<!--     <input type="password" placeholder="Confirm password" required> -->
-  </form>
-  <a href="/login">Have an account? Login here!</a>
+<div class="intro-container">
+  <h1 class="intro-title">Music Wall</h1>
+  <h3 class="intro-subtitle">Stick your songs</h3>
+  <div class="user-options">
+    <form action="/users/create" method="post" class="login-form">
+      <input type="text" name="name" placeholder="Your name" required><br>
+      <input type="password" name="password" placeholder="Pick a password" required><br>
+      <input type="submit" value="Sign up!">
+  <!--     <input type="password" placeholder="Confirm password" required> -->
+    </form>
+    <a href="/login" class="login-redirect">Have an account? Login here!</a>
+  </div>
 </div>

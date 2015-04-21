@@ -20,6 +20,7 @@ header {
   font-weight: bolder;
   font-size: 1.3em;
   color: #FFF;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .title a:hover {
