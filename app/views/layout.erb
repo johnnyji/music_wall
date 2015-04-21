@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="/stylesheets/normalize.css">
   <link rel="stylesheet" href="/stylesheets/application.css">
   <link rel="stylesheet" href="/stylesheets/header.css">
-  <link rel="stylesheet" type="text/css" href="/stylesheets/songs/show.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/songs/song.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/songs/new.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -15,7 +15,12 @@
 <body>
 <header>
   <div class="title"><a href="/songs">Music Wall</a></div>
-  <a href="/songs/new" class='share-song-link'>Stick your song!</a>
+  <% if logged_in? %>
+    <a href="/songs/new" class='share-song-link'>Stick your song!</a>
+    <a href="/logout" data-method="post">Logout</a>
+  <% else %>
+    <a href="/login" class='share-song-link'>Login</a>
+  <% end %>
 </header>
 <div class="main-container">
   <%= yield %>
