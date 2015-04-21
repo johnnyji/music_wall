@@ -10,19 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421000437) do
+ActiveRecord::Schema.define(version: 20150421023434) do
+
+  create_table "downvotes", force: true do |t|
+    t.integer "user_id"
+    t.integer "song_id"
+  end
+
+  add_index "downvotes", ["song_id"], name: "index_downvotes_on_song_id"
+  add_index "downvotes", ["user_id"], name: "index_downvotes_on_user_id"
 
   create_table "songs", force: true do |t|
     t.string   "title"
     t.string   "author"
     t.string   "url"
-    t.integer  "vote"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
   end
 
   add_index "songs", ["user_id"], name: "index_songs_on_user_id"
+
+  create_table "upvotes", force: true do |t|
+    t.integer "user_id"
+    t.integer "song_id"
+  end
+
+  add_index "upvotes", ["song_id"], name: "index_upvotes_on_song_id"
+  add_index "upvotes", ["user_id"], name: "index_upvotes_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

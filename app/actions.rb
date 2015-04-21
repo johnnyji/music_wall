@@ -1,8 +1,13 @@
-# Homepage (Root path)
+require "rack-flash"
+use Rack::Flash
 enable :sessions
 
 get '/' do
-  erb :index
+  if logged_in?
+    redirect to('/songs')
+  else
+    erb :index
+  end
 end
 
 post '/users/create' do
@@ -20,21 +25,22 @@ get '/login' do
 end
 
 post '/login' do
-  begin
     @user = User.where(name: params[:name], password: params[:password]).first
-    redirect to('/songs')
-  rescue ActiveRecord::RecordNotFound
-    erb :'users/login'
-  end
+    if @user.nil?
+      erb :index
+    else 
+      session[:user_id] = @user.id
+      redirect to('/songs')
+    end
 end
 
-post '/logout' do
+get '/logout' do
   session.clear
-  redirect to('/songs')
+  erb :index
 end
 
 get '/songs' do
-  @songs = Song.all.order('vote DESC')
+  @songs = Song.all.order('created_at DESC')
   erb :'/songs/index'
 end
 
@@ -44,7 +50,7 @@ get '/songs/new' do
 end
 
 post '/songs/create' do
-  @song = Song.new(title: params[:title], author: params[:author], url: params[:url], vote: 0, user_id: session[:user_id])
+  @song = Song.new(title: params[:title], author: params[:author], url: params[:url], user_id: session[:user_id])
   if @song.save
     redirect to('/songs')
   else
@@ -53,29 +59,39 @@ post '/songs/create' do
 end
 
 get '/songs/:id/upvote' do
-  @song = Song.find(params[:id])
-  @song.vote += 1
-  @song.save
-  redirect to('/songs')
+  upvote = Upvote.create(user_id: current_user.id, song_id: params[:id])
+  if upvote.save
+    redirect to('/songs')
+  else
+    flash[:error] = "You can't upvote that song twice!"
+    redirect to('/songs')
+  end
 end
 
 get '/songs/:id/downvote' do
-  @song = Song.find(params[:id])
-  @song.vote -= 1
-  @song.save
-  redirect to('/songs')
+  downvote = Downvote.create(user_id: current_user.id, song_id: params[:id])
+  if downvote.save
+    redirect to('/songs')
+  else
+    flash[:error] = "You've already downvoted that song!"
+    redirect to('/songs')
+  end
 end
 
 
 # HELPERS
 helpers do
 
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  def logged_in?
+    current_user != nil 
   end
 
-  def logged_in?
-    current_user != nil
+  def current_user
+    if session[:user_id]
+      @current_user ||= User.find(session[:user_id])
+    end
+  rescue ActiveRecord::RecordNotFound
+    erb :index
   end
 
 end

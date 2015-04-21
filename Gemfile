@@ -11,6 +11,8 @@ gem 'sinatra-activerecord'
 gem 'puma'
 gem 'tux'
 
+gem 'rack-flash3'
+
 group :development, :test do
   gem 'pry-nav', '~> 0.2.4'
   gem 'pry'

@@ -15,12 +15,14 @@
 <body>
 <header>
   <div class="title"><a href="/songs">Music Wall</a></div>
+  <%= flash[:error] if flash[:error] %>
   <% if logged_in? %>
     <a href="/songs/new" class='share-song-link'>Stick your song!</a>
-    <a href="/logout" data-method="post">Logout</a>
+    <a href="/logout" class="share-song-link">Logout</a>
   <% else %>
     <a href="/login" class='share-song-link'>Login</a>
   <% end %>
+  
 </header>
 <div class="main-container">
   <%= yield %>
