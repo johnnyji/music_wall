@@ -1,4 +1,3 @@
-
 <% @songs.each do |song| %>
   <div class="song-container">
     <div class="song-info">
@@ -10,7 +9,7 @@
         <i class="fa fa-angle-up"></i>
       </a><br>
       <p class="vote-count">
-        0
+        <%= song.vote_count %>
       </p>
       <a href="/songs/<%= song.id %>/downvote">
         <i class="fa fa-angle-down"></i>

@@ -59,7 +59,7 @@ post '/songs/create' do
 end
 
 get '/songs/:id/upvote' do
-  upvote = Upvote.create(user_id: current_user.id, song_id: params[:id])
+  upvote = Upvote.new(user_id: current_user.id, song_id: params[:id])
   if upvote.save
     redirect to('/songs')
   else
@@ -69,7 +69,7 @@ get '/songs/:id/upvote' do
 end
 
 get '/songs/:id/downvote' do
-  downvote = Downvote.create(user_id: current_user.id, song_id: params[:id])
+  downvote = Downvote.new(user_id: current_user.id, song_id: params[:id])
   if downvote.save
     redirect to('/songs')
   else

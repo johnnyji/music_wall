@@ -26,7 +26,7 @@ header {
   color: #202020;
 }
 
-a.share-song-link {
+a.login-link {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -35,6 +35,18 @@ a.share-song-link {
   font-size: 1.2em;
 }
 
-a.share-song-link:hover {
+a.login-link:hover,
+a.share-song-link:hover,
+a.logout-link:hover {
   color: #202020;
+}
+
+a.share-song-link {
+  position: relative;
+  color: #FFF;
+  font-size: 1em;
+  
+}
+
+a.logout-link {
 }

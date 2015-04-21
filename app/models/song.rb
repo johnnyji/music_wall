@@ -14,7 +14,7 @@ class Song < ActiveRecord::Base
   before_save :format_title
 
   def vote_count
-    self.upvotes - self.downvotes
+    self.upvotes.count - self.downvotes.count
   end
 
   def format_title

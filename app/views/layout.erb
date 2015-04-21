@@ -15,12 +15,12 @@
 <body>
 <header>
   <div class="title"><a href="/songs">Music Wall</a></div>
-  <%= flash[:error] if flash[:error] %>
+  <%= flash[:error] %>
   <% if logged_in? %>
     <a href="/songs/new" class='share-song-link'>Stick your song!</a>
-    <a href="/logout" class="share-song-link">Logout</a>
+    <a href="/logout" class="logout-link">Logout</a>
   <% else %>
-    <a href="/login" class='share-song-link'>Login</a>
+    <a href="/login" class='login-link'>Login</a>
   <% end %>
   
 </header>
