@@ -26,13 +26,13 @@ header {
   color: #202020;
 }
 
-a.login-link {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  right: 0;
+.nav-links {
+  display: inline-block;
   color: #FFF;
   font-size: 1.2em;
+  float: right;
+  margin-right: 50px;
+  margin-top: 10px;
 }
 
 a.login-link:hover,
@@ -49,4 +49,6 @@ a.share-song-link {
 }
 
 a.logout-link {
+  font-size: 0.8em;
+  margin-left: 1em;
 }

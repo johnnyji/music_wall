@@ -17,6 +17,12 @@ a:hover, a:active {
   color: #FDE3A7;
 }
 
+.error {
+  font-weight: bolder;
+  margin: 0 auto 1em auto;
+  text-align: center;
+}
+
 .main-container {
   margin: 120px auto 80px auto;
   padding: 1em;

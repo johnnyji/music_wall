@@ -15,16 +15,19 @@
 <body>
 <header>
   <div class="title"><a href="/songs">Music Wall</a></div>
-  <%= flash[:error] %>
-  <% if logged_in? %>
-    <a href="/songs/new" class='share-song-link'>Stick your song!</a>
-    <a href="/logout" class="logout-link">Logout</a>
-  <% else %>
-    <a href="/login" class='login-link'>Login</a>
-  <% end %>
-  
+  <div class="nav-links">
+    <% if logged_in? %>
+      <a href="/songs/new" class='share-song-link'>Stick your song!</a>
+      <a href="/logout" class="logout-link">Logout</a>
+    <% else %>
+      <a href="/login" class='login-link'>Login</a>
+    <% end %> 
+  </div>
 </header>
 <div class="main-container">
+<div class="error">
+  <%= flash[:error] %>
+</div>
   <%= yield %>
 </div>
 </body>
