@@ -97,6 +97,13 @@ post '/songs/:song_id/reviews' do
   end
 end
 
+get '/songs/:song_id/reviews/:id/delete' do
+  @review = Review.find(params[:id])
+  @review.destroy
+  flash[:notice] = 'Your post was succesfully deleted!'
+  redirect to("/songs/#{params[:song_id]}/reviews")
+end
+
 # HELPERS
 helpers do
 

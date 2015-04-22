@@ -11,14 +11,24 @@
 }
 
 .review-user {
-  display: block;
-  text-align: left;
+  display: inline-block;
+  float: left;
   font-family: 'PT Sans', sans-serif;
   font-size: 0.8em;
   font-weight: bold;
 }
 
+.review-delete {
+  float: right;
+  display: inline-block;
+}
+
+.review-delete:hover {
+  color: #F17109;
+}
+
 .review-content {
+  clear: both;
   text-align: left;
   margin-top: 0.4em;
   white-space: pre-wrap;

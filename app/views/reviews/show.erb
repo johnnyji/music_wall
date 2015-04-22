@@ -15,6 +15,9 @@
   <%  @reviews.each do |review| %>
     <div class="review-container">
       <span class="review-user"><%= review.user.name %>:</span>
+      <% if review.user == current_user %>
+        <a href="/songs/<%= review.song.id %>/reviews/<%= review.id %>/delete" class="review-delete">X</a>
+      <% end %>
       <p class="review-content"><%= review.content %></p>
     </div>
   <% end %>
