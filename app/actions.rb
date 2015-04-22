@@ -26,14 +26,14 @@ get '/login' do
 end
 
 post '/login' do
-    @user = User.where(name: params[:name], password: params[:password]).first
-    if @user.nil?
-      flash[:error] = "Invalid Username or Password!"
-      erb :index
-    else 
-      session[:user_id] = @user.id
-      redirect to('/songs')
-    end
+  @user = User.where(name: params[:name], password: params[:password]).first
+  if @user.nil?
+    flash[:error] = "Invalid Username or Password!"
+    erb :index
+  else 
+    session[:user_id] = @user.id
+    redirect to('/songs')
+  end
 end
 
 get '/logout' do

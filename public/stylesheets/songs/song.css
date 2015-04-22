@@ -7,6 +7,7 @@
 
 .song-info  {
   display: inline-block;
+  vertical-align: middle;
   width: auto;
   width: 90%
 }
@@ -36,4 +37,10 @@
 }
 .song-container a:hover {
   color: #E87E04;
+}
+
+.reviews-link {
+  position: relative;
+  display: inline-block;
+  margin-top: 1em;
 }

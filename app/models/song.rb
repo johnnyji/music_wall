@@ -6,6 +6,7 @@ class Song < ActiveRecord::Base
   belongs_to :user
   has_many :downvotes
   has_many :upvotes
+  has_many :reviews
 
   before_validation :format_song_url
   validates_presence_of :title, message: "Your song needs a title"

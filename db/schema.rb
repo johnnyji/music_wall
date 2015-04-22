@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421023434) do
+ActiveRecord::Schema.define(version: 20150421234054) do
 
   create_table "downvotes", force: true do |t|
     t.integer "user_id"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20150421023434) do
 
   add_index "downvotes", ["song_id"], name: "index_downvotes_on_song_id"
   add_index "downvotes", ["user_id"], name: "index_downvotes_on_user_id"
+
+  create_table "reviews", force: true do |t|
+    t.integer  "song_id"
+    t.integer  "user_id"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reviews", ["song_id"], name: "index_reviews_on_song_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "songs", force: true do |t|
     t.string   "title"
