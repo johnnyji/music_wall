@@ -4,5 +4,5 @@ class Review < ActiveRecord::Base
   
   validates :content, 
             presence: true, length: { minimum: 3 }
-  validates_uniqueness_of :song_id, scope: :user_id #makes sure that a user can only post one review per song
+  validates_uniqueness_of :song_id, { scope: :user_id, message: "You've already reviewed this song!" }
 end

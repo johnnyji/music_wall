@@ -80,6 +80,22 @@ get '/songs/:id/downvote' do
   end
 end
 
+get '/songs/:id/reviews' do
+  @song = Song.find(params[:id])
+  @reviews = @song.reviews.order('created_at DESC')
+  erb :'reviews/show'
+end
+
+post '/songs/:song_id/reviews' do
+  @review = Review.new(content: params[:content], song_id: params[:song_id], user_id: session[:user_id])
+  if @review.save
+    flash[:notice] = "Thanks for the review!"
+    redirect to("/songs/#{params[:song_id]}/reviews")
+  else
+    flash[:error] = "You're comment wasn't saved properly"
+    redirect to("/songs/#{params[:song_id]}/reviews")
+  end
+end
 
 # HELPERS
 helpers do

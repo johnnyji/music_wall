@@ -5,7 +5,7 @@
       <em><%= song.author %></em> -
       <a href="<%= song.url %>" target="_blank"><%= song.title %></a><br>
       <% if logged_in? %>
-        <a href="/song/:id/show" class="reviews-link">View Reviews (<%= song.reviews.count %>)</a>
+        <a href="/songs/<%= song.id %>/reviews" class="reviews-link">Reviews (<%= song.reviews.count %>)</a>
       <% else %>
         <a href="/users/create" class="reviews-link">Sign up</a> or <a href="/login" class="reviews-link">Login</a> to post comments!
       <% end %>

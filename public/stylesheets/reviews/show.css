@@ -1,1 +1,25 @@
-show.css
+.review-song-title {
+  font-size: 1.1em;
+}
+
+.review-container {
+  width: 350px;
+  margin: 1em auto;
+  padding: 0.5em;
+  background-color: #FDE3A7;
+  font-size: 0.9em;
+}
+
+.review-user {
+  display: block;
+  text-align: left;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.review-content {
+  text-align: left;
+  margin-top: 0.4em;
+  white-space: pre-wrap;
+}

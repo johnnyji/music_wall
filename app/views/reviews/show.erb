@@ -1,0 +1,21 @@
+
+<p class="review-song-title">
+  <em><%= @song.author %></em>
+   - <a href="<%= @song.url %>" target="_blank"><%= @song.title %></a>
+</p>
+
+<form action="/songs/<%= @song.id %>/reviews" method="post" class="review-form">
+  <textarea type="text" name="content" placeholder="Review this song"></textarea><br>
+  <input type="submit" value="Review!">
+</form>
+
+<% if @reviews.count < 1 %>
+  No reviews for this song yet!
+<% else %>
+  <%  @reviews.each do |review| %>
+    <div class="review-container">
+      <span class="review-user"><%= review.user.name %>:</span>
+      <p class="review-content"><%= review.content %></p>
+    </div>
+  <% end %>
+<% end %>
