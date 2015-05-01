@@ -4,7 +4,7 @@ Sinatra porject for Lighthouse Labs. A website where users can upload songs and 
 
 ### The Dev Process
 
-This Music Wall was a quick one day project at Lighthouse Labs which was built entirely in Ruby Sinatra, an as always, custom CSS on the front end.
+This Music Wall was a quick one day project at Lighthouse Labs which was built entirely in Ruby Sinatra, an as always, custom CSS on the front end.g
 
 #### Instructions
 
