@@ -6,6 +6,13 @@
 
 <form action="/songs/<%= @song.id %>/reviews" method="post" class="review-form">
   <textarea type="text" name="content" placeholder="Review this song"></textarea><br>
+  <select>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
   <input type="submit" value="Review!">
 </form>
 
@@ -18,6 +25,7 @@
       <% if review.user == current_user %>
         <a href="/songs/<%= review.song.id %>/reviews/<%= review.id %>/delete" class="review-delete">X</a>
       <% end %>
+      <%= review.rating %>
       <p class="review-content"><%= review.content %></p>
     </div>
   <% end %>

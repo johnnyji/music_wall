@@ -1,4 +1,5 @@
 require "rack-flash"
+
 use Rack::Flash
 enable :sessions
 
@@ -116,6 +117,7 @@ helpers do
       @current_user ||= User.find(session[:user_id])
     end
   rescue ActiveRecord::RecordNotFound
+    flash[:error] = "No user found!"
     erb :index
   end
 

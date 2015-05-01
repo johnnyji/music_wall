@@ -3,6 +3,7 @@ html, body {
   font-family: 'Indie Flower', sans-serif;
   background-image: url("../images/background.jpg");
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
   font-family: inherit;
